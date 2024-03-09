@@ -12,6 +12,7 @@ import org.zhajing.police.entity.Police;
 import org.zhajing.police.service.PoliceService;
 import org.zhajing.police.utils.Result;
 import org.zhajing.police.utils.Security;
+import org.zhajing.police.vo.StatisticVO;
 
 /**
  * @author Mason.Chen
@@ -39,6 +40,10 @@ public class PoliceController {
         return Result.ok(police);
     }
 
+    @GetMapping("/statisticNumb")
+    public Result<StatisticVO> statisticNumb(){
+       return Result.ok(this.policeService.getPoliceByPoliceNumber());
+    }
 
 
 }
